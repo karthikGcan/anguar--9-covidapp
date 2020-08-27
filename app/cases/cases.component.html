@@ -1,0 +1,117 @@
+
+<mat-toolbar color="primary" class="navbar">
+  <span>Covid-19<mat-icon >coronavirus</mat-icon></span>
+  <div>
+    <button mat-icon-button  >
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button  >
+      <mat-icon>dashboard</mat-icon>
+    </button>
+    <button mat-icon-button  >
+      <mat-icon>settings</mat-icon>
+    </button>
+ </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav mode="side"  [(opened)]=op >
+    <mat-nav-list >
+      
+ 
+      <a mat-list-item style="height: 70px;" [routerLink]="['/add-cases']"><mat-icon>contacts</mat-icon> Add Cases</a>
+   <a mat-list-item style="height: 70px;" [routerLink]="['/cases-stat']"><mat-icon>coronavirus</mat-icon>About Corona</a>
+   
+   <a mat-list-item style="height: 70px;" [routerLink]="['/edit-cases/:id']" ><mat-icon>add_box</mat-icon>Edit cases</a>
+   <a mat-list-item style="height: 70px;"><mat-icon>find_in_page</mat-icon>Updated cases</a>
+   <a mat-list-item style="height: 70px;"><mat-icon>help</mat-icon>help</a>
+   <a mat-list-item style="height: 70px;"><mat-icon>feedback</mat-icon>Feedback</a>
+    </mat-nav-list>
+  </mat-sidenav>
+    <mat-sidenav-content>
+      <button class="pad" mat-icon-button (click)="op=!op"><mat-icon>view_list</mat-icon></button><br><br>
+
+
+
+
+      <mat-expansion-panel class="panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <div class="mat-title">Covid-19 Cases List</div>
+            </mat-panel-title>
+            </mat-expansion-panel-header>
+           
+            <mat-action-row>
+              <div class="example-container mat-elevation-z8">
+              <div class="example-loading-shade"
+              *ngIf="isLoadingResults">
+           <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+         </div>
+       
+         <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="data" class="example-table"
+                 matSort matSortActive="name" matSortDisableClear matSortDirection="asc">
+      
+            <!-- Cases Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Cases Name</th>
+              <td mat-cell *matCellDef="let row">{{row.name}}</td>
+            </ng-container>
+      
+            <!-- Cases Age Column -->
+            <ng-container matColumnDef="age">
+              <th mat-header-cell *matHeaderCellDef>Age</th>
+              <td mat-cell *matCellDef="let row">{{row.age}}</td>
+            </ng-container>
+      
+            <!-- Cases Status Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let row">{{row.status}}</td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/cases-details/', row.  id]"></tr>
+          </table>
+         
+        </div>
+        
+      </div>
+      <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/add-cases']"><mat-icon>add</mat-icon> Cases</a>&nbsp;
+        <a mat-flat-button color="accent" [routerLink]="['/cases-stat']"><mat-icon>bar_chart</mat-icon> Statistic</a>
+      </div>
+
+                
+                
+            </mat-action-row>
+    </mat-expansion-panel><br><br>
+    <mat-expansion-panel class="op">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="mat-title">Card Image</div>
+        </mat-panel-title>
+       
+        
+
+      </mat-expansion-panel-header>
+      <mat-card style="width: 300px;">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/img/001..jpg"  >
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+</mat-sidenav-content>
+</mat-sidenav-container>
+   
+
+  

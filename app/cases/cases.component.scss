@@ -1,0 +1,118 @@
+.navbar{
+    justify-content: space-between;
+    margin: 0;
+    position:fixed;
+    padding: 15px;
+    top:0;
+    left: 0;
+   
+}
+
+span{
+    padding-right: 1rem;
+}
+
+mat-sidenav-container{
+    height: 90vh;
+    top: 44px;
+    right: 30px;
+    width: 105%;
+}
+mat-sidenav,mat-sidenav-content{
+    padding:16px;
+}
+mat-sidenav{
+    background-color: rgb(162, 173, 235);
+    width: 200px;
+
+    
+    
+    
+
+
+
+}
+.pad{
+    color: black; 
+}
+
+.panel{
+    background-color: rgb(85, 157, 240);
+}
+
+
+
+
+
+
+/* Structure */
+.example-container {
+    position: relative;
+    padding-left: 50px;
+    padding-top:50px ;
+    padding-right: 260px;
+    padding-bottom: 50px;
+    margin: auto;
+    background-color: salmon;
+    
+    
+
+  }
+  
+  .example-table-container {
+    position: relative;
+    
+    
+    max-height: 400%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 200%;
+   
+    margin: auto;
+    height: auto;
+
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  /* Column Widths */
+  .mat-column-number,
+  .mat-column-state {
+    max-width: 64px;
+  }
+  
+  .mat-column-created {
+    max-width: 124px;
+  }
+  .mat-sidenav a:hover{
+    color: rgb(251, 253, 253);
+  }
+  
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  img{
+   max-width: 200px;
+  }
+  .op{
+    background-color:rgb(12, 120, 243); ;
+  }
+  
+  

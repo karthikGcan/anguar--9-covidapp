@@ -1,0 +1,95 @@
+<div class="mur">
+    <img mat-card-image src="../../assets/img/corona.png"  width="1200PX" height="400PX" >
+</div>
+
+
+
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+   
+  </button>
+  <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>About Corona</ng-template>
+        <div class="mat-title">OVERVIEW</div>
+       <div class="mat-body-1">Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+
+        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.
+        
+        The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. 
+        
+        The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you also practice respiratory etiquette (for example, by coughing into a flexed elbow).
+        
+        At this time, there are no specific vaccines or treatments for COVID-19. However, there are many ongoing clinical trials evaluating potential treatments. WHO will continue to provide updated information as soon as clinical findings become available.
+           
+       </div>
+       
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Prevention</ng-template>
+        <div class="mat-title">HOW TO PREVENT</div>
+        <div class="mat-body-1">
+            <ul>
+                <li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.</li>
+                <li>Maintain at least 1 metre distance between you and people coughing or sneezing.</li>
+                <li>Avoid touching your face</li>
+                <li>Cover your mouth and nose when coughing or sneezing.</li>
+                <li>Stay home if you feel unwell.</li>
+                <li>Refrain from smoking and other activities that weaken the lungs.</li>
+                <li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.
+                </li>
+                
+            </ul>
+        </div>
+      
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template class="ll" matStepLabel>Symptoms</ng-template>
+      <div class="mat-title">SYMPTOMS</div>
+      <div class="mat-subheading-1">
+        COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.
+      </div>
+      <div class="mat-body-2">Most common symptoms:</div>
+      <ul>
+          <li>fever.</li>
+          <li>dry cough.</li>
+          <li>tiredness</li>
+      </ul>
+
+<div class="mat-body-2">
+    Less common symptoms:
+</div>
+<ul>
+    <li>aches and pains.</li>
+    <li> a rash on skin, or discolouration of fingers or toes.</li>
+    <li> sore throat.</li>
+    <li> sore throat.</li>
+    <li> headache.</li>
+    <li>  loss of taste or smell.</li>
+</ul>
+
+    
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>How does the new coronavirus spread?</ng-template>
+          <div class="mat-title"></div>
+         <div class="mat-body-1">
+            As of now, researchers know that the new coronavirus is spread through droplets released into the air when an infected person coughs or sneezes.<br> The droplets generally do not travel more than a few feet, and they fall to the ground (or onto surfaces) in a few seconds — this is why physical,<br> distancing is effective in preventing the spread.
+             
+         </div>
+         
+        </form>
+      </mat-step>
+ </mat-vertical-stepper>
